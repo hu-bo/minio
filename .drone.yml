@@ -1,18 +1,18 @@
 kind: pipeline
-name: deploy-minio
+type: ssh
+name: default
+
+server:
+  host: 106.75.237.248
+  user: root
+  password:
+    from_secret: SSH_PWD
 
 steps:
-  - name: pull-minio
-    image: docker:20.10
-    commands:
-      - docker pull minio/minio:latest
-
-  - name: deploy-minio
-    image: docker:20.10
-    commands:
-      - docker run -d -p 9000:9000 --name minio \
-        -e "MINIO_ROOT_USER=root" \
-        -e "MINIO_ROOT_PASSWORD=8590550a" \
-        -e "MINIO_SERVER_URL=http://minio.8and1.cn" \
-        -v /data/minio:/data minio/minio server /data/app/minio-db
-
+- name: deploy
+  environment:
+      PWD_A:
+        from_secret: PWD_A
+  commands:
+  - docker-compose up -d --force-recreate
+  - docker ps
