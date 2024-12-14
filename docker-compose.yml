@@ -6,7 +6,7 @@ services:
     container_name: minio1
     environment:
       MINIO_ROOT_USER: root
-      MINIO_ROOT_PASSWORD: 8590550a
+      MINIO_ROOT_PASSWORD: ${PWD_A}
       MINIO_SERVER_URL: http://minio.8and1.cn
     ports:
       - "9000:9000" 
