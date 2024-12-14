@@ -1,5 +1,7 @@
 # minio
 
+minio-console.8and1.cn
+
 #### 数据迁移
 
 install mc
