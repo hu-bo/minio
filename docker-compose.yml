@@ -8,6 +8,7 @@ services:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: ${PWD_A}
       MINIO_SERVER_URL: http://minio.8and1.cn
+      MINIO_CONFIG_ENV_FILE: /etc/config.env
     ports:
       - "9000:9000" 
       - "9001:9001"
