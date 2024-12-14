@@ -3,7 +3,8 @@ type: ssh
 name: default
 
 server:
-  host: 106.75.237.248
+  host:
+    from_secret: CURRENT_HOST
   user: root
   password:
     from_secret: SSH_PWD
