@@ -14,5 +14,6 @@ steps:
       PWD_A:
         from_secret: PWD_A
   commands:
+  - echo $PWD_A
   - docker-compose up -d --force-recreate
   - docker ps
