@@ -16,5 +16,5 @@ sudo mv mc /usr/local/bin/mc
 ```bash
 mc alias set local http://127.0.0.1:9000 root *******
 mc alias set destination http://106.75.237.2487:9000 root *******
-mc mirror source/static destination/static
+mc mirror local/static destination/static
 ```
